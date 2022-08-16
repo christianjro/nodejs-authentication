@@ -7,15 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Please Log In</h1>
-    <form action="/log-in" method="POST">
-        <label for="username">Username</label>
-        <input name="username" placeholder="username" type="text"/>
+    <% if (user) { %> 
+        <h1>Welcome Back <%= user.username %></h1>
+        <a href="/log-out">Log Out</a>
+    <% } else { %> 
+        <h1>Please Log In</h1>
+        <form action="/log-in" method="POST">
+            <label for="username">Username</label>
+            <input name="username" placeholder="username" type="text"/>
 
-        <label for="password">Password</label>
-        <input name="password" type="password"/>
+            <label for="password">Password</label>
+            <input name="password" type="password"/>
 
-        <button>Log In</button>
-    </form>
+            <button>Log In</button>
+        </form>
+    <% } %> 
 </body>
 </html>
