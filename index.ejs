@@ -21,6 +21,11 @@
 
             <button>Log In</button>
         </form>
+        <% if(message) { %>
+            <div class="alert alert-danger" style="color:red;">
+                <%= message %>
+            </div>
+        <% } %>
     <% } %> 
 </body>
 </html>
